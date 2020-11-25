@@ -22,15 +22,15 @@ bms_log_group_regex_old = /T\/(\d{6})\/B\/(.+?)\/G\/(\d+.\d+\/\d+.\d+)\//
 log_refine_list = []
 
 # battery_log = event.get("battery_log")
-battery_log = log_new
-log_list = battery_log.scan(bms_log_regex)
+battery_log = log_before
+log_list = battery_log.scan(bms_log_regex_old)
 
 now = Time.new
 time_size = (log_list.size) * 10
 start_time = now.to_i - time_size
 
 log_list.each { |log|
-  time, bms, gps = log.match(bms_log_group_regex).captures
+  time, bms, gps = log.match(bms_log_group_regex_old).captures
   time = start_time;
   start_time += 10;
   
@@ -42,4 +42,4 @@ log_list.each { |log|
 
 }
 
-# puts log_refine_list[0]["gps"]
+puts log_refine_list[0]["gps"]
