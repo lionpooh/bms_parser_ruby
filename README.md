@@ -1,2 +1,3 @@
 # bms_parser_ruby
-battery log parser
+logstash 
+battery log parser ruby script
