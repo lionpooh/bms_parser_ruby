@@ -56,7 +56,7 @@ module RefineLog
 
   def RefineLog.refine_gps(gps)
     if !gps.nil? and !gps.empty?
-     gps = gps[2, gps.length].split("|")
+     gps = gps[0, gps.length].split("|")
      gps = {"lat" => gps[0], "lon" => gps[1]}
     else
       gps = {"lat" => "3rkKvb5MYP5K60FQIVp/Lg==", "lon" => "3rkKvb5MYP5K60FQIVp/Lg=="}
